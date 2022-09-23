@@ -1,0 +1,146 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.win"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="31" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->D:\win\win - Copy\android\app\src\debug\AndroidManifest.xml:5:5-77
+11-->D:\win\win - Copy\android\app\src\debug\AndroidManifest.xml:5:22-75
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:4:5-67
+12-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+13-->[com.facebook.flipper:flipper:0.125.0] C:\Users\Sainath\.gradle\caches\transforms-3\95e931fbbfdb29d8fe263063f71e1fc3\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:5-76
+13-->[com.facebook.flipper:flipper:0.125.0] C:\Users\Sainath\.gradle\caches\transforms-3\95e931fbbfdb29d8fe263063f71e1fc3\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:22-73
+14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+14-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-81
+14-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-78
+15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+15-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-80
+15-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:22-77
+16
+17    <queries>
+17-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-20:15
+18
+19        <!-- Query open documents -->
+20        <intent>
+20-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:9-19:18
+21            <action android:name="android.intent.action.OPEN_DOCUMENT_TREE" />
+21-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-79
+21-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:21-76
+22        </intent>
+23    </queries>
+24
+25    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+25-->[com.android.installreferrer:installreferrer:1.0] C:\Users\Sainath\.gradle\caches\transforms-3\c5e31ec2c01b71c470b3b519a64f1058\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:5-110
+25-->[com.android.installreferrer:installreferrer:1.0] C:\Users\Sainath\.gradle\caches\transforms-3\c5e31ec2c01b71c470b3b519a64f1058\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:22-107
+26
+27    <application
+27-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:6:5-27:19
+28        android:name="com.win.MainApplication"
+28-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:7:7-38
+29        android:allowBackup="false"
+29-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:11:7-34
+30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+30-->[androidx.core:core:1.7.0] C:\Users\Sainath\.gradle\caches\transforms-3\b5a8e99dac667ebea08e9f9757d3b404\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+31        android:debuggable="true"
+32        android:hardwareAccelerated="true"
+32-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:13:7-41
+33        android:icon="@mipmap/ic_launcher"
+33-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:9:7-41
+34        android:label="@string/app_name"
+34-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:8:7-39
+35        android:roundIcon="@mipmap/ic_launcher_round"
+35-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:10:7-52
+36        android:theme="@style/AppTheme"
+36-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:12:7-38
+37        android:usesCleartextTraffic="true" >
+37-->D:\win\win - Copy\android\app\src\debug\AndroidManifest.xml:8:9-44
+38        <activity
+38-->D:\win\win - Copy\android\app\src\debug\AndroidManifest.xml:11:9-111
+39            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+39-->D:\win\win - Copy\android\app\src\debug\AndroidManifest.xml:11:19-83
+40            android:exported="false" />
+40-->D:\win\win - Copy\android\app\src\debug\AndroidManifest.xml:11:84-108
+41        <activity
+41-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:14:7-26:18
+42            android:name="com.win.MainActivity"
+42-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:15:9-37
+43            android.screenOrientation="portrait"
+43-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:20:9-45
+44            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+44-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:17:9-118
+45            android:exported="true"
+45-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:21:9-32
+46            android:label="@string/app_name"
+46-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:16:9-41
+47            android:launchMode="singleTask"
+47-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:18:9-40
+48            android:windowSoftInputMode="adjustResize" >
+48-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:19:9-51
+49            <intent-filter>
+49-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:22:9-25:25
+50                <action android:name="android.intent.action.MAIN" />
+50-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:23:13-65
+50-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:23:21-62
+51
+52                <category android:name="android.intent.category.LAUNCHER" />
+52-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:24:13-73
+52-->D:\win\win - Copy\android\app\src\main\AndroidManifest.xml:24:23-70
+53            </intent-filter>
+54        </activity>
+55
+56        <provider
+56-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-32:20
+57            android:name="expo.modules.filesystem.FileSystemFileProvider"
+57-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-74
+58            android:authorities="com.win.FileSystemFileProvider"
+58-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-74
+59            android:exported="false"
+59-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-37
+60            android:grantUriPermissions="true" >
+60-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-47
+61            <meta-data
+61-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:13-31:70
+62                android:name="android.support.FILE_PROVIDER_PATHS"
+62-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:30:17-67
+63                android:resource="@xml/file_system_provider_paths" />
+63-->[:expo-file-system] D:\win\win - Copy\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:17-67
+64        </provider>
+65
+66        <meta-data
+66-->[:expo-modules-core] D:\win\win - Copy\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-12:89
+67            android:name="org.unimodules.core.AppLoader#react-native-headless"
+67-->[:expo-modules-core] D:\win\win - Copy\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-79
+68            android:value="expo.modules.adapters.react.apploader.RNHeadlessAppLoader" />
+68-->[:expo-modules-core] D:\win\win - Copy\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-86
+69
+70        <provider
+70-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Sainath\.gradle\caches\transforms-3\31798a0ea3f25ea98e44c876b4851b08\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+71            android:name="androidx.startup.InitializationProvider"
+71-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Sainath\.gradle\caches\transforms-3\31798a0ea3f25ea98e44c876b4851b08\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+72            android:authorities="com.win.androidx-startup"
+72-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Sainath\.gradle\caches\transforms-3\31798a0ea3f25ea98e44c876b4851b08\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+73            android:exported="false" >
+73-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Sainath\.gradle\caches\transforms-3\31798a0ea3f25ea98e44c876b4851b08\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+74            <meta-data
+74-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Sainath\.gradle\caches\transforms-3\31798a0ea3f25ea98e44c876b4851b08\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+75                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+75-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Sainath\.gradle\caches\transforms-3\31798a0ea3f25ea98e44c876b4851b08\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+76                android:value="androidx.startup" />
+76-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Sainath\.gradle\caches\transforms-3\31798a0ea3f25ea98e44c876b4851b08\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+77            <meta-data
+77-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Sainath\.gradle\caches\transforms-3\39517e1b011367242185b54afc0b3c9e\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+78                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+78-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Sainath\.gradle\caches\transforms-3\39517e1b011367242185b54afc0b3c9e\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+79                android:value="androidx.startup" />
+79-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Sainath\.gradle\caches\transforms-3\39517e1b011367242185b54afc0b3c9e\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+80        </provider>
+81    </application>
+82
+83</manifest>
