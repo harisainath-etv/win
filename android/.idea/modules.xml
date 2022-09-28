@@ -10,14 +10,62 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/win.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/win.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/win.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/win.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/win.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/win.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/514976480/win.expo.iml" filepath="$PROJECT_DIR$/.idea/modules/514976480/win.expo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/685706979/win.expo-application.iml" filepath="$PROJECT_DIR$/.idea/modules/685706979/win.expo-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/685706979/win.expo-application.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/685706979/win.expo-application.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/685706979/win.expo-application.main.iml" filepath="$PROJECT_DIR$/.idea/modules/685706979/win.expo-application.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/685706979/win.expo-application.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/685706979/win.expo-application.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1945255682/win.expo-av.iml" filepath="$PROJECT_DIR$/.idea/modules/1945255682/win.expo-av.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1945255682/win.expo-av.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/1945255682/win.expo-av.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1945255682/win.expo-av.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1945255682/win.expo-av.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1945255682/win.expo-av.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/1945255682/win.expo-av.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1310268578/win.expo-constants.iml" filepath="$PROJECT_DIR$/.idea/modules/1310268578/win.expo-constants.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1310268578/win.expo-constants.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/1310268578/win.expo-constants.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1310268578/win.expo-constants.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1310268578/win.expo-constants.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1310268578/win.expo-constants.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/1310268578/win.expo-constants.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/817863687/win.expo-error-recovery.iml" filepath="$PROJECT_DIR$/.idea/modules/817863687/win.expo-error-recovery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/817863687/win.expo-error-recovery.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/817863687/win.expo-error-recovery.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/817863687/win.expo-error-recovery.main.iml" filepath="$PROJECT_DIR$/.idea/modules/817863687/win.expo-error-recovery.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/817863687/win.expo-error-recovery.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/817863687/win.expo-error-recovery.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/155761971/win.expo-file-system.iml" filepath="$PROJECT_DIR$/.idea/modules/155761971/win.expo-file-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/155761971/win.expo-file-system.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/155761971/win.expo-file-system.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/155761971/win.expo-file-system.main.iml" filepath="$PROJECT_DIR$/.idea/modules/155761971/win.expo-file-system.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/155761971/win.expo-file-system.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/155761971/win.expo-file-system.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1026956764/win.expo-font.iml" filepath="$PROJECT_DIR$/.idea/modules/1026956764/win.expo-font.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1026956764/win.expo-font.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/1026956764/win.expo-font.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1026956764/win.expo-font.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1026956764/win.expo-font.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1026956764/win.expo-font.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/1026956764/win.expo-font.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-976539894/win.expo-keep-awake.iml" filepath="$PROJECT_DIR$/.idea/modules/-976539894/win.expo-keep-awake.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-976539894/win.expo-keep-awake.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-976539894/win.expo-keep-awake.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-976539894/win.expo-keep-awake.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-976539894/win.expo-keep-awake.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-976539894/win.expo-keep-awake.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-976539894/win.expo-keep-awake.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1278565198/win.expo-modules-core.iml" filepath="$PROJECT_DIR$/.idea/modules/-1278565198/win.expo-modules-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1278565198/win.expo-modules-core.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-1278565198/win.expo-modules-core.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1278565198/win.expo-modules-core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-1278565198/win.expo-modules-core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1278565198/win.expo-modules-core.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-1278565198/win.expo-modules-core.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/514976480/win.expo.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/514976480/win.expo.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/514976480/win.expo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/514976480/win.expo.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/514976480/win.expo.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/514976480/win.expo.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-656485645/win.react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/-656485645/win.react-native-community_masked-view.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-656485645/win.react-native-community_masked-view.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-656485645/win.react-native-community_masked-view.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-656485645/win.react-native-community_masked-view.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-656485645/win.react-native-community_masked-view.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-656485645/win.react-native-community_masked-view.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-656485645/win.react-native-community_masked-view.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2038208355/win.react-native-community_slider.iml" filepath="$PROJECT_DIR$/.idea/modules/-2038208355/win.react-native-community_slider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2038208355/win.react-native-community_slider.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-2038208355/win.react-native-community_slider.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2038208355/win.react-native-community_slider.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-2038208355/win.react-native-community_slider.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2038208355/win.react-native-community_slider.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-2038208355/win.react-native-community_slider.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1103105348/win.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/1103105348/win.react-native-gesture-handler.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1103105348/win.react-native-gesture-handler.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/1103105348/win.react-native-gesture-handler.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1103105348/win.react-native-gesture-handler.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1103105348/win.react-native-gesture-handler.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1103105348/win.react-native-gesture-handler.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/1103105348/win.react-native-gesture-handler.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-614190138/win.react-native-idle-timer.iml" filepath="$PROJECT_DIR$/.idea/modules/-614190138/win.react-native-idle-timer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-614190138/win.react-native-idle-timer.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-614190138/win.react-native-idle-timer.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-614190138/win.react-native-idle-timer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-614190138/win.react-native-idle-timer.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-614190138/win.react-native-idle-timer.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-614190138/win.react-native-idle-timer.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1546333585/win.react-native-orientation-locker.iml" filepath="$PROJECT_DIR$/.idea/modules/-1546333585/win.react-native-orientation-locker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1546333585/win.react-native-orientation-locker.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-1546333585/win.react-native-orientation-locker.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1546333585/win.react-native-orientation-locker.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-1546333585/win.react-native-orientation-locker.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1546333585/win.react-native-orientation-locker.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-1546333585/win.react-native-orientation-locker.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2067716367/win.react-native-pager-view.iml" filepath="$PROJECT_DIR$/.idea/modules/-2067716367/win.react-native-pager-view.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2067716367/win.react-native-pager-view.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-2067716367/win.react-native-pager-view.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2067716367/win.react-native-pager-view.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-2067716367/win.react-native-pager-view.main.iml" />
@@ -34,10 +82,18 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-907491067/win.react-native-screens.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-907491067/win.react-native-screens.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-907491067/win.react-native-screens.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-907491067/win.react-native-screens.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-907491067/win.react-native-screens.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-907491067/win.react-native-screens.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/122715818/win.react-native-svg.iml" filepath="$PROJECT_DIR$/.idea/modules/122715818/win.react-native-svg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/122715818/win.react-native-svg.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/122715818/win.react-native-svg.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/122715818/win.react-native-svg.main.iml" filepath="$PROJECT_DIR$/.idea/modules/122715818/win.react-native-svg.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/122715818/win.react-native-svg.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/122715818/win.react-native-svg.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1849078034/win.react-native-vector-icons.iml" filepath="$PROJECT_DIR$/.idea/modules/1849078034/win.react-native-vector-icons.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1849078034/win.react-native-vector-icons.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/1849078034/win.react-native-vector-icons.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1849078034/win.react-native-vector-icons.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1849078034/win.react-native-vector-icons.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1849078034/win.react-native-vector-icons.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/1849078034/win.react-native-vector-icons.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1967772607/win.react-native-video.iml" filepath="$PROJECT_DIR$/.idea/modules/-1967772607/win.react-native-video.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1967772607/win.react-native-video.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-1967772607/win.react-native-video.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1967772607/win.react-native-video.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-1967772607/win.react-native-video.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1967772607/win.react-native-video.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-1967772607/win.react-native-video.unitTest.iml" />
     </modules>
   </component>
 </project>
