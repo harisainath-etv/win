@@ -199,7 +199,7 @@ const goToBackScreen =() =>{
                 
                 <Video 
                 paused={paused}
-                source={{uri:"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"}}
+                source={{uri:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"}}
                 style={fullscreen ? styles.backgroundVideoFull : styles.backgroundVideo} 
                 resizeMode="contain"
                 onLoad={handleLoad}
