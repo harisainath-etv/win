@@ -1,13 +1,16 @@
-import React, {  useState,useRef,useEffect } from 'react';
+import React, {  useState,useRef,useEffect,useCallback } from 'react';
 import { View,StyleSheet, Text, Dimensions, Pressable,PanResponder,BackHandler,TouchableOpacity  } from 'react-native';
 import Video from 'react-native-video';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import { TouchableWithoutFeedback } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 import ProgressBarCustom from './ProgressBarCustom';
 import Orientation,{ useDeviceOrientationChange} from 'react-native-orientation-locker';
 import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
+import { BASE_URL } from '../constants';
 
 //convert to player time 
 function getMinutesFromSeconds(time) {
@@ -23,8 +26,11 @@ function getMinutesFromSeconds(time) {
 const width=Dimensions.get('window').width-80;
 const height=Dimensions.get('window').height-120;
 
-export default function CustomeVideoPlayer(){
+export default function CustomeVideoPlayer({route}){
   const navigation = useNavigation();
+  const {seourl}=route.params;
+  const seoKeys=seourl.split("/");
+  
   //Defining all the constants for handling the player controls
     const [screenWidth,setScreenWidth]=useState(width)
     const [paused,setPaused]=useState(true)
@@ -34,10 +40,39 @@ export default function CustomeVideoPlayer(){
     const [duration,setDuration]=useState(0)
     const [controls,setControls]=useState(true)
     const [fullscreen,setFullscreen]=useState(false)
+    const [latestEpisodesSingle,setLatestEpisodesSingle] = useState();
     const [state, setState] = useState({
         currentTime: 0,
     });
     const player = useRef(null)
+    const [urlPath,setUrlPath] = useState(BASE_URL+"/catalogs/"+seoKeys[1]+ "/items/"+seoKeys[2]+ "/subcategories/"+seoKeys[3]+ "/episodes/"+seoKeys[4] + "?auth_token=xttqeMn2dYtthp8aaUr2&item_language=eng&region=IN");
+    //const singleUrl="https://prod.suv.etvwin.com/v3/smart_urls/636245e2b64c2f27f8e9e673?service_id=10&play_url=yes&protocol=hls&region=IN&catalog_id=59954ae6deedb723e9000024&show_id=60e98b6120fbd75b5301f236&us=d22f416843ca7ecda806a80779fa8280"
+    const loadData = () =>{
+      axios.get(urlPath)
+      .then((response) => {
+        //console.log(response.data.data.play_url.saranyu.url+"?service_id=10&play_url=yes&protocol=hls&region=IN&catalog_id="+response.data.data.catalog_id+"&show_id="+response.data.data.show_theme_id);
+          
+                axios.get(response.data.data.play_url.saranyu.url+"?service_id=10&play_url=yes&protocol=hls&region=IN&catalog_id="+response.data.data.catalog_id+"&show_id="+response.data.data.show_theme_id)
+                .then((response1) => {
+                  
+                  setLatestEpisodesSingle(response1.data.adaptive_urls[0].playback_url);
+                })
+                .catch(function (error) {
+                  console.log(error);
+                })
+
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+    
+    }
+    useFocusEffect(
+      useCallback(() => {
+        loadData();
+      }, [])
+    );
 
 //setting duartion on loading the video
     const handleLoad =(meta) =>{
@@ -99,7 +134,7 @@ export default function CustomeVideoPlayer(){
 //Showing controls after hiding them
     const showControls =() =>{
         setControls(true)
-        playPauseCounter ? pause() : play()
+       // playPauseCounter ? pause() : play()
     }
 
 //Handling the orientation change
@@ -150,6 +185,7 @@ const onBackPress=()=>{
     useEffect(() => {
         resetInactivityTimeout()
         play()
+        console.log(latestEpisodesSingle);
         BackHandler.addEventListener('hardwareBackPress', onBackPress);
       }, [])
     
@@ -199,7 +235,7 @@ const goToBackScreen =() =>{
                 
                 <Video 
                 paused={paused}
-                source={{uri:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"}}
+                source={{uri:latestEpisodesSingle}}
                 style={fullscreen ? styles.backgroundVideoFull : styles.backgroundVideo} 
                 resizeMode="contain"
                 onLoad={handleLoad}
@@ -241,7 +277,7 @@ const goToBackScreen =() =>{
                 
 
           <View style={{}}>
-            <Text style={{fontSize:25,marginBottom:5,color:'#ffffff',padding:6}}>Epi 118</Text>
+            <Text style={{fontSize:25,marginBottom:5,color:'#ffffff',padding:6}}>EP 114</Text>
             <Text style={{fontSize:13,marginBottom:5,color:'#566666',padding:6}}>16 hours ago</Text>
             <Text style={{fontSize:13,marginBottom:5,color:'#566666',padding:6}}>ETV Plus</Text>
             <Text style={{fontSize:13,marginBottom:10,color:'#566666',padding:6}}>U/A 13+</Text>

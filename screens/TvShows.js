@@ -3,9 +3,10 @@ import { View, Text,StyleSheet,Dimensions,FlatList,Image } from 'react-native';
 import axios from 'axios';
 import { useFocusEffect } from '@react-navigation/native';
 import { BASE_URL } from '../constants';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 const window = Dimensions.get('window');
 const PAGE_WIDTH = window.width;
-export default function TvShows() {
+export default function TvShows({navigation}) {
   const state = {
     index: 1,
   }
@@ -30,9 +31,9 @@ export default function TvShows() {
   const renderItem = ({ item }) => {
     return (
       <View>
-        <Image
+        <TouchableOpacity onPress={()=>navigation.navigate('VideoPlayer',{seourl:item.seo_url})}><Image
             style={styles.imageSectionHorizontal}
-            source={{uri:item.thumbnails.medium_16_9.url.toString()}} />
+            source={{uri:item.thumbnails.medium_4_3.url.toString()}} /></TouchableOpacity>
       </View>
     );
   };
