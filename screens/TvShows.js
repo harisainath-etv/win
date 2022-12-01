@@ -2,7 +2,7 @@ import React,{useCallback, useState} from 'react';
 import { View, Text,StyleSheet,Dimensions,FlatList,Image } from 'react-native';
 import axios from 'axios';
 import { useFocusEffect } from '@react-navigation/native';
-import { BASE_URL } from '../constants';
+import { BASE_URL,ANDROID_AUTH_TOKEN } from '../constants';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 const window = Dimensions.get('window');
 const PAGE_WIDTH = window.width;
@@ -13,7 +13,7 @@ export default function TvShows({navigation}) {
   }
   const [latestEpisodesCount,setLatestEpisodesCount] = useState();
   const loadData = () =>{
-    axios.get(BASE_URL+'/catalog_lists/featured-latest-episodes.gzip?item_language=eng&region=IN&auth_token=xttqeMn2dYtthp8aaUr2&from=0&page=0&page_size=20&start_count=0')
+    axios.get(BASE_URL+'/catalog_lists/featured-latest-episodes.gzip?item_language=eng&region=IN&auth_token='+ANDROID_AUTH_TOKEN+'&from=0&page=0&page_size=20&start_count=0')
     .then((response) => {
       setLatestEpisodesCount(response.data.data.catalog_list_items)
     })
@@ -25,7 +25,7 @@ export default function TvShows({navigation}) {
  const navigateToVideo = async (item) =>{
     try{
       const seoKeys=item.seo_url.split("/"); 
-      var url=(BASE_URL+"/catalogs/"+seoKeys[1]+ "/items/"+seoKeys[2]+ "/subcategories/"+seoKeys[3]+ "/episodes/"+seoKeys[4] + "?auth_token=xttqeMn2dYtthp8aaUr2&item_language=eng&region=IN");
+      var url=(BASE_URL+"/catalogs/"+seoKeys[1]+ "/items/"+seoKeys[2]+ "/subcategories/"+seoKeys[3]+ "/episodes/"+seoKeys[4] + "?auth_token="+ANDROID_AUTH_TOKEN+"&item_language=eng&region=IN");
       navigation.navigate('CustomeVideoPlayer',{url,pageName})
     }
     catch{}

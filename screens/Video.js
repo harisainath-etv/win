@@ -8,7 +8,6 @@ import { TouchableWithoutFeedback } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import ProgressBarCustom from './ProgressBarCustom';
 import Orientation,{ useDeviceOrientationChange} from 'react-native-orientation-locker';
-import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import { BASE_URL } from '../constants';
 
