@@ -11,7 +11,6 @@ export default function TvShows({navigation}) {
   const state = {
     index: 1,
   }
-
   const [latestEpisodesCount,setLatestEpisodesCount] = useState();
   const loadData = () =>{
     axios.get(BASE_URL+'/catalog_lists/featured-latest-episodes.gzip?item_language=eng&region=IN&auth_token=xttqeMn2dYtthp8aaUr2&from=0&page=0&page_size=20&start_count=0')
@@ -23,8 +22,14 @@ export default function TvShows({navigation}) {
     })
   
   }
- const navigateToVideo = (item) =>{
-    navigation.navigate('VideoPlayer',{item,pageName})
+ const navigateToVideo = async (item) =>{
+    try{
+      const seoKeys=item.seo_url.split("/"); 
+      var url=(BASE_URL+"/catalogs/"+seoKeys[1]+ "/items/"+seoKeys[2]+ "/subcategories/"+seoKeys[3]+ "/episodes/"+seoKeys[4] + "?auth_token=xttqeMn2dYtthp8aaUr2&item_language=eng&region=IN");
+      navigation.navigate('CustomeVideoPlayer',{url,pageName})
+    }
+    catch{}
+    
  }
   useFocusEffect(
     useCallback(() => {

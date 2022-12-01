@@ -23,7 +23,7 @@ import Movies from './screens/Movies';
 import TvShows from './screens/TvShows';
 import Search from './screens/search';
 import Subscribe from './screens/subscribe';
-import VideoPlayer from './screens/Video';
+import CustomeVideoPlayer from './screens/Video';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -237,8 +237,8 @@ function MyDrawer({navigation}){
       >
       </Drawer.Screen>
       <Drawer.Screen
-      name='VideoPlayer'
-      component={VideoPlayer}
+      name='CustomeVideoPlayer'
+      component={CustomeVideoPlayer}
       options={() =>
         ({
           header:()=>null,
@@ -271,7 +271,7 @@ return (
         <Stack.Screen name="TvShows" component={TvShows}  options={{}}/>
         <Stack.Screen name="Search" component={Search}  options={{}}/>
         <Stack.Screen name="Subscribe" component={Subscribe}  options={{}}/>
-        <Stack.Screen name="VideoPlayer" component={VideoPlayer} options={{header:()=>null,}}/>
+        <Stack.Screen name="CustomeVideoPlayer" component={CustomeVideoPlayer} options={{header:()=>null,}}/>
       </Stack.Navigator>
     </NavigationContainer>
     </View>

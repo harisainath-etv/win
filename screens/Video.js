@@ -27,11 +27,9 @@ const width=Dimensions.get('window').width-80;
 const height=Dimensions.get('window').height-120;
 
 export default function CustomeVideoPlayer({navigation,route}){
-  const {item,pageName}=route.params;
-  //console.log(item.seo_url);
-  const seoKeys=item.seo_url.split("/");
-  
-  //Defining all the constants for handling the player controls
+  const {url,pageName}=route.params;
+ 
+    //Defining all the constants for handling the player controls
     const [screenWidth,setScreenWidth]=useState(width)
     const [paused,setPaused]=useState(true)
     const [playPause,setPlayPause]=useState("play")
@@ -41,17 +39,17 @@ export default function CustomeVideoPlayer({navigation,route}){
     const [controls,setControls]=useState(true)
     const [fullscreen,setFullscreen]=useState(false)
     const [latestEpisodesSingle,setLatestEpisodesSingle] = useState("");
-    const [catalog,setcatalog] = useState(seoKeys[1]);
-    const [items,setitems] = useState(seoKeys[2]);
-    const [subcat,setsubcat] = useState(seoKeys[3]);
-    const [episode,setepisode] = useState(seoKeys[4]);
     const [state, setState] = useState({
         currentTime: 0,
     });
+
+
+    loadData();
+
     const player = useRef(null)
-    const [urlPath,setUrlPath] = useState(BASE_URL+"/catalogs/"+seoKeys[1]+ "/items/"+seoKeys[2]+ "/subcategories/"+seoKeys[3]+ "/episodes/"+seoKeys[4] + "?auth_token=xttqeMn2dYtthp8aaUr2&item_language=eng&region=IN");
-    const loadData = () =>{
-      axios.get(urlPath)
+    
+    function loadData(){
+      axios.get(url)
       .then((response) => {
                  
                 axios.get(response.data.data.play_url.saranyu.url+"?service_id=10&play_url=yes&protocol=hls&region=IN&catalog_id="+response.data.data.catalog_id+"&show_id="+response.data.data.show_theme_id)
@@ -71,12 +69,12 @@ export default function CustomeVideoPlayer({navigation,route}){
     }
     useFocusEffect(
       useCallback(() => {
-        return () => {
-          loadData();
+        
+         // loadData();
           resetInactivityTimeout()
           play()
           BackHandler.addEventListener('hardwareBackPress', onBackPress);
-        }
+        
       }, [latestEpisodesSingle])
     );
     useEffect(() => {
