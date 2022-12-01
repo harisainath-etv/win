@@ -26,10 +26,10 @@ function getMinutesFromSeconds(time) {
 const width=Dimensions.get('window').width-80;
 const height=Dimensions.get('window').height-120;
 
-export default function CustomeVideoPlayer({route}){
-  const navigation = useNavigation();
-  const {seourl}=route.params;
-  const seoKeys=seourl.split("/");
+export default function CustomeVideoPlayer({navigation,route}){
+  const {item,pageName}=route.params;
+  //console.log(item.seo_url);
+  const seoKeys=item.seo_url.split("/");
   
   //Defining all the constants for handling the player controls
     const [screenWidth,setScreenWidth]=useState(width)
@@ -40,21 +40,22 @@ export default function CustomeVideoPlayer({route}){
     const [duration,setDuration]=useState(0)
     const [controls,setControls]=useState(true)
     const [fullscreen,setFullscreen]=useState(false)
-    const [latestEpisodesSingle,setLatestEpisodesSingle] = useState();
+    const [latestEpisodesSingle,setLatestEpisodesSingle] = useState("");
+    const [catalog,setcatalog] = useState(seoKeys[1]);
+    const [items,setitems] = useState(seoKeys[2]);
+    const [subcat,setsubcat] = useState(seoKeys[3]);
+    const [episode,setepisode] = useState(seoKeys[4]);
     const [state, setState] = useState({
         currentTime: 0,
     });
     const player = useRef(null)
     const [urlPath,setUrlPath] = useState(BASE_URL+"/catalogs/"+seoKeys[1]+ "/items/"+seoKeys[2]+ "/subcategories/"+seoKeys[3]+ "/episodes/"+seoKeys[4] + "?auth_token=xttqeMn2dYtthp8aaUr2&item_language=eng&region=IN");
-    //const singleUrl="https://prod.suv.etvwin.com/v3/smart_urls/636245e2b64c2f27f8e9e673?service_id=10&play_url=yes&protocol=hls&region=IN&catalog_id=59954ae6deedb723e9000024&show_id=60e98b6120fbd75b5301f236&us=d22f416843ca7ecda806a80779fa8280"
     const loadData = () =>{
       axios.get(urlPath)
       .then((response) => {
-        //console.log(response.data.data.play_url.saranyu.url+"?service_id=10&play_url=yes&protocol=hls&region=IN&catalog_id="+response.data.data.catalog_id+"&show_id="+response.data.data.show_theme_id);
-          
+                 
                 axios.get(response.data.data.play_url.saranyu.url+"?service_id=10&play_url=yes&protocol=hls&region=IN&catalog_id="+response.data.data.catalog_id+"&show_id="+response.data.data.show_theme_id)
                 .then((response1) => {
-                  
                   setLatestEpisodesSingle(response1.data.adaptive_urls[0].playback_url);
                 })
                 .catch(function (error) {
@@ -70,9 +71,17 @@ export default function CustomeVideoPlayer({route}){
     }
     useFocusEffect(
       useCallback(() => {
-        loadData();
-      }, [])
+        return () => {
+          loadData();
+          resetInactivityTimeout()
+          play()
+          BackHandler.addEventListener('hardwareBackPress', onBackPress);
+        }
+      }, [latestEpisodesSingle])
     );
+    useEffect(() => {
+      
+    }, [])
 
 //setting duartion on loading the video
     const handleLoad =(meta) =>{
@@ -182,12 +191,7 @@ const onBackPress=()=>{
   handleSmallscreen();
   return true;
 }
-    useEffect(() => {
-        resetInactivityTimeout()
-        play()
-        console.log(latestEpisodesSingle);
-        BackHandler.addEventListener('hardwareBackPress', onBackPress);
-      }, [])
+    
     
       const panResponder = useRef(
         PanResponder.create({
@@ -212,7 +216,7 @@ const goToBackVideoScreen =() =>{
 
 //Handling minimize screen back button
 const goToBackScreen =() =>{
-  navigation.goBack();
+  navigation.navigate(pageName);
 }
 
    return(

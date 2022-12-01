@@ -6,6 +6,7 @@ import { BASE_URL } from '../constants';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 const window = Dimensions.get('window');
 const PAGE_WIDTH = window.width;
+var pageName="Home"
 export default function TvShows({navigation}) {
   const state = {
     index: 1,
@@ -22,7 +23,9 @@ export default function TvShows({navigation}) {
     })
   
   }
- 
+ const navigateToVideo = (item) =>{
+    navigation.navigate('VideoPlayer',{item,pageName})
+ }
   useFocusEffect(
     useCallback(() => {
       loadData();
@@ -31,7 +34,7 @@ export default function TvShows({navigation}) {
   const renderItem = ({ item }) => {
     return (
       <View>
-        <TouchableOpacity onPress={()=>navigation.navigate('VideoPlayer',{seourl:item.seo_url})}><Image
+        <TouchableOpacity onPress={()=>navigateToVideo(item)}><Image
             style={styles.imageSectionHorizontal}
             source={{uri:item.thumbnails.medium_4_3.url.toString()}} /></TouchableOpacity>
       </View>
