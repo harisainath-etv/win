@@ -14,32 +14,39 @@ import {
     Montserrat_400Regular,
     Montserrat_500Medium,
   } from '@expo-google-fonts/montserrat';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import axios from 'axios';
+import { BASE_URL,ANDROID_AUTH_TOKEN,FIRETV_BASE_URL } from '../constants';
 
 export const ElementsText = {
     AUTOPLAY: 'AutoPlay',
 };
 export const window = Dimensions.get('window');
 const PAGE_WIDTH = window.width;
-const colors = [
-    '#ffc908',
-    '#ffc908',
-    '#ffc908',
-    '#ffc908',
-    '#ffc908',
-    '#ffc908',
-];
 const state = {
   data: ['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth', 'Seventh', 'Eighth', 'Ninth', 'Tenth'],
   index: 1,
 }
 
-
+var arr=[];
 function Index({navigation}) {
     let [fontsLoaded] = useFonts({
         Montserrat_400Regular,
         Montserrat_500Medium
       });
+      const [colors,setColors] = useState([
+        '#ffc908',
+        '#ffc908',
+        '#ffc908',
+        '#ffc908',
+        '#ffc908',
+        '#ffc908',
+        '#ffc908',
+        '#ffc908',
+        '#ffc908',
+        '#ffc908',
+    ]);
+    const [images,setImages]=useState([]);
     const [isVertical, setIsVertical] = useState(false);
     const [autoPlay, setAutoPlay] = useState(true);
     const [pagingEnabled, setPagingEnabled] = useState(true);
@@ -51,33 +58,26 @@ function Index({navigation}) {
               height: PAGE_WIDTH * 1.05,
           });
          
+    function loadData(){
+        const url=  FIRETV_BASE_URL+"/catalog_lists/home.gzip?item_language=eng&region=IN&auth_token="+ANDROID_AUTH_TOKEN+"&access_token=Ay6KCkajdBzztJ4bptpW&page=0&page_size=5&npage_size=10";
+        
+        axios.get(url)
+      .then((response) => {
+        for(var i=0;i<response.data.data.catalog_list_items[0].catalog_list_items.length;i++)
+        {
+            arr[i]=response.data.data.catalog_list_items[0].catalog_list_items[i].thumbnails.high_3_4;
+        }
+        setImages(arr);
+        //console.log(JSON.stringify(arr));
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
 
+    }
+    loadData();
     return (
     <View style={{flex:1}}>
-        
-        {/*Header Menu Navigation*/}
-        {/* <View style={styles.Container}>
-            <ScrollView
-            horizontal
-            contentContainerStyle={{
-                flexGrow: 1,
-                justifyContent: 'center',
-                width: '100%',
-                textAlign: "center",
-                padding:15
-              }}    
-            >
-                <Pressable style={{width:"25%"}} onPress={() => navigation.navigate('LiveTv')} ><View  style={styles.textTabActive}><Text  style={styles.textStyle}>LIVE TV</Text></View></Pressable>
-                <Pressable style={{width:"25%"}} onPress={() => navigation.navigate('Exclusive')} ><View  style={styles.textTab}><Text style={styles.textStyle}>EXCLUSIVE</Text></View></Pressable>
-                <Pressable style={{width:"25%"}} onPress={() => navigation.navigate('Movies')} ><View  style={styles.textTab}><Text style={styles.textStyle}>MOVIES</Text></View></Pressable>
-                <Pressable style={{width:"25%"}} onPress={() => navigation.navigate('TvShows')} ><View  style={styles.textTab}><Text style={styles.textStyle}>TV SHOWS</Text></View></Pressable>
-
-            </ScrollView>
-        </View> */}
-
-
-
-
       <ScrollView  
       contentContainerStyle={{ flexWrap: 'nowrap' }} 
       style={{
@@ -105,18 +105,18 @@ function Index({navigation}) {
                     parallaxScrollingOffset: 50,
                     parallaxAdjacentItemScale:0.82,
                 }}
-                data={colors}
+                data={images}
                 style={{top:-15,}}
-                renderItem={({ index }) => <SBItem index={index} />}
+                renderItem={({ item,index }) => <Image key={index} style={styles.image} source={{uri:item.url}} />}
             />
             {!!progressValue && (
                 <View
                     style={{
                                   flexDirection: 'row',
                                   justifyContent: 'space-between',
-                                  width: 100,
+                                  width: 200,
                                   alignSelf: 'center',
-                                  top:-50,
+                                  top:-30,
                           }}
                 >
                     {colors.map((backgroundColor, index) => {
@@ -743,7 +743,17 @@ chromeCast:{
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf:'flex-end'
-}
+},
+image: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    resizeMode: 'stretch',
+    borderRadius:10,
+    height:400
+},
 });
 
 export default Index;
