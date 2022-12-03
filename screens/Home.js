@@ -28,7 +28,15 @@ const state = {
   index: 1,
 }
 
-var arr=[];
+
+var HomeBanner=[];
+var BeforeTv=[];
+var LiveTv=[];
+var TvShow=[];
+function removeDuplicates(arr) {
+    return arr.filter((item,
+        index) => arr.indexOf(item) === index);
+}
 function Index({navigation}) {
     let [fontsLoaded] = useFonts({
         Montserrat_400Regular,
@@ -46,7 +54,10 @@ function Index({navigation}) {
         '#ffc908',
         '#ffc908',
     ]);
-    const [images,setImages]=useState([]);
+    const [bannerimages,setBannerImages]=useState([]);
+    const [beforetvimages,setbeforetvimages]=useState([]);
+    const [liveTv,setliveTv]=useState([]);
+    const [tvShows,settvShows]=useState([]);
     const [isVertical, setIsVertical] = useState(false);
     const [autoPlay, setAutoPlay] = useState(true);
     const [pagingEnabled, setPagingEnabled] = useState(true);
@@ -63,12 +74,41 @@ function Index({navigation}) {
         
         axios.get(url)
       .then((response) => {
-        for(var i=0;i<response.data.data.catalog_list_items[0].catalog_list_items.length;i++)
+        
+        for(var i=0;i<response.data.data.catalog_list_items.length;i++)
         {
-            arr[i]=response.data.data.catalog_list_items[0].catalog_list_items[i].thumbnails.high_3_4;
+             for(var j=0;j<response.data.data.catalog_list_items[i].catalog_list_items.length;j++)
+             {
+                 if(response.data.data.catalog_list_items[i].friendly_id=='featured-banner')
+                 {
+                    if(!HomeBanner.includes(response.data.data.catalog_list_items[i].catalog_list_items[j].thumbnails.high_3_4.url))
+                    HomeBanner.push(response.data.data.catalog_list_items[i].catalog_list_items[j].thumbnails.high_3_4.url);
+                 }
+                 else
+                 if(response.data.data.catalog_list_items[i].friendly_id=='featured-before-tv')
+                 {
+                    if(!BeforeTv.includes(response.data.data.catalog_list_items[i].catalog_list_items[j].thumbnails.high_4_3.url))
+                    BeforeTv.push(response.data.data.catalog_list_items[i].catalog_list_items[j].thumbnails.high_4_3.url);
+                 }
+                 else
+                 if(response.data.data.catalog_list_items[i].friendly_id=='featured-live-tv')
+                 {
+                    if(!LiveTv.includes(response.data.data.catalog_list_items[i].catalog_list_items[j].thumbnails.high_3_4.url))
+                    LiveTv.push(response.data.data.catalog_list_items[i].catalog_list_items[j].thumbnails.high_3_4.url);
+                 }
+                 else
+                 if(response.data.data.catalog_list_items[i].friendly_id=='tv-show')
+                 {
+                    if(!TvShow.includes(response.data.data.catalog_list_items[i].catalog_list_items[j].thumbnails.high_3_4.url))
+                    TvShow.push(response.data.data.catalog_list_items[i].catalog_list_items[j].thumbnails.high_3_4.url);
+                 }
+                 
+             }
         }
-        setImages(arr);
-        //console.log(JSON.stringify(arr));
+        setBannerImages(HomeBanner)
+        setbeforetvimages(BeforeTv)
+        setliveTv(LiveTv)
+        settvShows(TvShow)
       })
       .catch(function (error) {
         console.log(error);
@@ -105,9 +145,9 @@ function Index({navigation}) {
                     parallaxScrollingOffset: 50,
                     parallaxAdjacentItemScale:0.82,
                 }}
-                data={images}
+                data={bannerimages}
                 style={{top:-15,}}
-                renderItem={({ item,index }) => <Image key={index} style={styles.image} source={{uri:item.url}} />}
+                renderItem={({ item,index }) => <Image key={index} style={styles.image} source={{uri:item}} />}
             />
             {!!progressValue && (
                 <View
@@ -197,7 +237,7 @@ function Index({navigation}) {
             </View>
             <FlatList
                         extraData={state.index}
-                        data={state.data}
+                        data={beforetvimages}
                         keyExtractor={(x, i) => i.toString()}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
@@ -206,8 +246,8 @@ function Index({navigation}) {
                             ({ item, index }) =>
                                 <View>
                                     <Image
-                                        style={styles.imageSectionHorizontal}
-                                        source={require('../assets/images/reality.png')} />
+                                        style={[styles.imageSectionHorizontal,{resizeMode: 'stretch',}]}
+                                        source={{uri:item}} />
                                 </View>
                         }
                     />
@@ -219,7 +259,7 @@ function Index({navigation}) {
             </View>
             <FlatList
                         extraData={state.index}
-                        data={state.data}
+                        data={liveTv}
                         keyExtractor={(x, i) => i.toString()}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
@@ -228,8 +268,8 @@ function Index({navigation}) {
                             ({ item, index }) =>
                                 <View>
                                     <Image
-                                        style={styles.imageSectionVertical}
-                                        source={require('../assets/images/stepup.png')} />
+                                        style={[styles.imageSectionVertical,{resizeMode: 'stretch',}]}
+                                        source={{uri:item}} />
                                 </View>
                         }
                     />
@@ -263,7 +303,7 @@ function Index({navigation}) {
                         loop
                         pagingEnabled={pagingEnabled}
                         snapEnabled={snapEnabled}
-                        autoPlay={autoPlay}
+                        autoPlay={false}
                         autoPlayInterval={2000}
                         onProgressChange={(_, absoluteProgress) =>
                             (progressValue.value = absoluteProgress)
@@ -274,9 +314,9 @@ function Index({navigation}) {
                             parallaxScrollingOffset: 50,
                             parallaxAdjacentItemScale:0.82,
                         }}
-                        data={colors}
+                        data={tvShows}
                         style={{top:-15,height:250,borderRadius:18}}
-                        renderItem={({ index }) => <SBItem index={index} />}
+                        renderItem={({ item,index }) => <Image key={index} style={styles.image} source={{uri:item}} />}
                     />
                 </View>
 
