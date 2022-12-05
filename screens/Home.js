@@ -99,8 +99,8 @@ function Index({navigation}) {
                  else
                  if(response.data.data.catalog_list_items[i].friendly_id=='tv-show')
                  {
-                    if(!TvShow.includes(response.data.data.catalog_list_items[i].catalog_list_items[j].thumbnails.high_3_4.url))
-                    TvShow.push(response.data.data.catalog_list_items[i].catalog_list_items[j].thumbnails.high_3_4.url);
+                    if(!TvShow.includes(response.data.data.catalog_list_items[i].catalog_list_items[j].thumbnails.high_4_3.url))
+                    TvShow.push(response.data.data.catalog_list_items[i].catalog_list_items[j].thumbnails.high_4_3.url);
                  }
                  
              }
@@ -315,8 +315,8 @@ function Index({navigation}) {
                             parallaxAdjacentItemScale:0.82,
                         }}
                         data={tvShows}
-                        style={{top:-15,height:250,borderRadius:18}}
-                        renderItem={({ item,index }) => <Image key={index} style={styles.image} source={{uri:item}} />}
+                        style={{top:-15,height:190,borderRadius:18}}
+                        renderItem={({ item,index }) => <Image key={index} style={[styles.image,{height:190}]} source={{uri:item}} />}
                     />
                 </View>
 
